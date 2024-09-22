@@ -1,0 +1,32 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $carMake = htmlspecialchars($_POST['carMake']);
+    $carModel = htmlspecialchars($_POST['carModel']);
+    $carYear = htmlspecialchars($_POST['carYear']);
+    $carCondition = htmlspecialchars($_POST['carCondition']);
+    $contactName = htmlspecialchars($_POST['contactName']);
+    $contactEmail = htmlspecialchars($_POST['contactEmail']);
+    $telephone = htmlspecialchars($_POST['telephone']);
+
+    $to = "uabantratu@gmail.com";  // Замените на ваш email
+    $subject = "Nauja automobilio užklausa";
+    $message = "
+        Markė: $carMake\n
+        Modelis: $carModel\n
+        Metai: $carYear\n
+        Būklė: $carCondition\n
+        Vardas: $contactName\n
+        El. paštas: $contactEmail
+	Tel. numeris: $telephone
+    ";
+    $headers = "From: no-reply@example.com" . "\r\n" . 
+               "Reply-To: $contactEmail" . "\r\n" .
+               "X-Mailer: PHP/" . phpversion();
+
+    if (mail($to, $subject, $message, $headers)) {
+        echo "Jūsų užklausa sėkmingai išsiųsta!";
+    } else {
+        echo "Įvyko klaida bandant išsiųsti jūsų užklausą.";
+    }
+}
+?>

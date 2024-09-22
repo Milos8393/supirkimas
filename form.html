@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greitas automobilių supirkimas</title>
+    <link rel="stylesheet" href="style.css"> <!-- Убедитесь, что стиль подключен -->
+</head>
+<body>
+    <div class="container">
+        <h1>Greitas automobilių supirkimas</h1>
+        <p>Mes perkame visus automobilius bet kokios būklės už geriausią kainą. Automobilio vertinimas internetu per 5 minutes!</p>
+        
+        <form id="carForm" action="sendmail.php" method="POST">
+            <label for="carMake">Markė:</label>
+            <input type="text" id="carMake" name="carMake" placeholder="Įveskite automobilio markę" required>
+
+            <label for="carModel">Modelis:</label>
+            <input type="text" id="carModel" name="carModel" placeholder="Įveskite automobilio modelį" required>
+
+            <label for="carYear">Metai:</label>
+            <input type="number" id="carYear" name="carYear" placeholder="Įveskite pagaminimo metus" required>
+
+            <label for="carCondition">Būklė:</label>
+            <select id="carCondition" name="carCondition">
+                <option value="puiki">Puiki</option>
+                <option value="gera">Gera</option>
+                <option value="vidutine">Vidutinė</option>
+                <option value="bloga">Bloga</option>
+            </select>
+
+            <label for="contactName">Jūsų vardas:</label>
+            <input type="text" id="contactName" name="contactName" placeholder="Įveskite savo vardą" required>
+
+            <label for="contactEmail">El. paštas:</label>
+            <input type="email" id="contactEmail" name="contactEmail" placeholder="Įveskite savo el. paštą" required>
+
+            <label for="telephone">Tel. numeris:</label>
+            <input type="phone" id="telephone" name="telephone" placeholder="Įveskite savo tel. numerį" required>
+
+            <button type="submit">Siųsti užklausą</button>
+        </form>
+        
+        <!-- Кнопка для выхода на главную страницу -->
+        <a href="index.html" class="main-button">Grįžti į pagrindinį puslapį</a>
+    </div>
+</body>
+</html>
